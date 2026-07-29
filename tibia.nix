@@ -15,15 +15,15 @@ in
       pkgs.libGL
       pkgs.mesa
       pkgs.vulkan-loader
-      pkgs.xorg.libX11
-      pkgs.xorg.libXext
-      pkgs.xorg.libXrandr
-      pkgs.xorg.libxcb
-      pkgs.xorg.libXcomposite
-      pkgs.xorg.libXdamage
-      pkgs.xorg.libXfixes
-      pkgs.xorg.libXtst
-      pkgs.xorg.libxkbfile
+      pkgs.libX11
+      pkgs.libXext
+      pkgs.libXrandr
+      pkgs.libxcb
+      pkgs.libXcomposite
+      pkgs.libXdamage
+      pkgs.libXfixes
+      pkgs.libXtst
+      pkgs.libxkbfile
       pkgs.xcbutilxrm
       pkgs.expat
       pkgs.wayland
