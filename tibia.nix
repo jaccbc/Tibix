@@ -11,6 +11,8 @@ in
 
     targetPkgs = pkgs: [
       # system dependencies
+      pkgs.libsm
+      pkgs.libice
       pkgs.stdenv.cc.cc
       pkgs.libGL
       pkgs.mesa
@@ -19,6 +21,12 @@ in
       pkgs.libXext
       pkgs.libXrandr
       pkgs.libxcb
+      pkgs.libxcb-cursor
+      pkgs.libxcb-image
+      pkgs.libxcb-keysyms
+      pkgs.libxcb-render-util
+      pkgs.libxcb-util
+      pkgs.libxcb-wm
       pkgs.libXcomposite
       pkgs.libXdamage
       pkgs.libXfixes
@@ -30,6 +38,7 @@ in
       pkgs.freetype
       pkgs.zlib
       pkgs.brotli
+      pkgs.zstd
       pkgs.fontconfig
       pkgs.libxkbcommon
       pkgs.dbus
@@ -53,7 +62,13 @@ in
 
     # local libraries
     profile = ''
+      export LIBGL_DRIVERS_PATH=/run/opengl-driver/lib/dri
       export LD_LIBRARY_PATH=${tibiaLibs}/lib:$LD_LIBRARY_PATH
+      export QSG_RENDER_LOOP=basic
+      export QT_DEBUG_PLUGINS=1
+      export QT_QPA_PLATFORM=xcb
+      export QT_AUTO_SCREEN_SCALE_FACTOR=0
+      export QT_ENABLE_HIGHDPI_SCALING=0
     '';
 
     # start Tibia client
