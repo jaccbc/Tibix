@@ -50,6 +50,9 @@ in
       pkgs.alsa-lib
       pkgs.libxml2
       pkgs.libxslt
+      pkgs.libwebp
+      pkgs.udev
+      pkgs.libgbm
       # tibia libraries
       tibiaLibs
     ];
@@ -63,9 +66,7 @@ in
     # local libraries
     profile = ''
       export LIBGL_DRIVERS_PATH=/run/opengl-driver/lib/dri
-      export LD_LIBRARY_PATH=${tibiaLibs}/lib:$LD_LIBRARY_PATH
       export QSG_RENDER_LOOP=basic
-      export QT_DEBUG_PLUGINS=1
       export QT_QPA_PLATFORM=xcb
       export QT_AUTO_SCREEN_SCALE_FACTOR=0
       export QT_ENABLE_HIGHDPI_SCALING=0
